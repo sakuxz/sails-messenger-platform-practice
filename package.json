@@ -1,5 +1,5 @@
 {
-  "name": "my-sails-boilerplate",
+  "name": "sails-messenger-platform-practice",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -31,7 +31,8 @@
     "sails-hook-autoreload": "^0.13.2",
     "sails-hook-babel": "^6.0.1",
     "sails-hook-sequelize": "^1.0.1",
-    "sqlite3": "^3.1.4"
+    "sqlite3": "^3.1.4",
+    "request": "^2.72.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

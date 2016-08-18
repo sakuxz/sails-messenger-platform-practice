@@ -38,6 +38,12 @@ module.exports.routes = {
 
   'get /api/test': 'UserController.index',
 
+  // Messenger PlatForm
+  'get /webhook': 'MessengerController.webhookGet',
+  'post /webhook': 'MessengerController.webhookPost',
+  'get /authorize': 'MessengerController.authorize',
+
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
