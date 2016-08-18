@@ -1,5 +1,7 @@
 const request = require('request');
-
+const PAGE_ACCESS_TOKEN  = sails.config.messenger['pageAccessToken'];
+ 
+ 
 module.exports = {
 	index: async (req, res) => {
 		let newUser = await User.create({
@@ -40,7 +42,7 @@ function callSendAPI(messageData) {
         recipientId);
       }
     } else {
-      console.error(response.error);
+      console.warm(response.error);
     }
   });
 }
