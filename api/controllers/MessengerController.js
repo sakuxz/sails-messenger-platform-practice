@@ -1,5 +1,6 @@
  const config = sails.config.messenger;
  const callSendAPI = MessengerService.callSendAPI;
+ const callSettingAPI = MessengerService.callSettingAPI;
  const msAct = require('./MessengerActionController');
 
  // App Secret can be retrieved from the App Dashboard
@@ -35,6 +36,8 @@ module.exports = {
 	      req.query['hub.verify_token'] === VALIDATION_TOKEN) {
 	    console.log("Validating webhook");
 	    res.status(200).send(req.query['hub.challenge']);
+	    
+	    sails.config.messenger.settings.forEach((e, i) => callSettingAPI(e) );
 	  } else {
 	    console.error("Failed validation. Make sure the validation tokens match.");
 	    res.sendStatus(403);

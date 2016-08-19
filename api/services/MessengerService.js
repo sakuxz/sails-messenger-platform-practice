@@ -3,7 +3,8 @@ const PAGE_ACCESS_TOKEN  = sails.config.messenger['pageAccessToken'];
  
  
 module.exports = {
-	callSendAPI: callSendAPI
+	callSendAPI: callSendAPI,
+	callSettingAPI: callSettingAPI
 };
 
 
@@ -32,7 +33,24 @@ function callSendAPI(messageData) {
         recipientId);
       }
     } else {
-      console.warm(response.error);
+      console.log(response.error);
+    }
+  });
+}
+
+function callSettingAPI(settingData) {
+  request({
+    uri: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: PAGE_ACCESS_TOKEN },
+    method: 'POST',
+    json: settingData
+
+  }, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(settingData);
+      console.log('setting success');
+    } else {
+      console.log(response.error);
     }
   });
 }
