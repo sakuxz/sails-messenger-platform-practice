@@ -1,4 +1,5 @@
 const callSendAPI = MessengerService.callSendAPI;
+const SERVER_URL = sails.config.serverURL;
 
 module.exports = {
 	receivedMessage: (event) => {

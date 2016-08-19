@@ -3,16 +3,6 @@ const PAGE_ACCESS_TOKEN  = sails.config.messenger['pageAccessToken'];
  
  
 module.exports = {
-	index: async (req, res) => {
-		let newUser = await User.create({
-			email: "123@456",
-			password: '789'
-		})
-		res.ok({
-			data: newUser
-		})
-	},
-
 	callSendAPI: callSendAPI
 };
 
